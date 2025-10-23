@@ -4,7 +4,7 @@ an project who connects you enterprise project with security
 
 
 ![kaio_ken_defender_icon](https://github.com/user-attachments/assets/7d350ebb-ed75-4cbc-b914-6babefab23af)
-<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <!-- Gradiente laranja das esferas -->
     <radialGradient id="orbGrad" cx="50%" cy="40%">
