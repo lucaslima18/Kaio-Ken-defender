@@ -12,35 +12,6 @@ an project who connects you enterprise project with security
       <stop offset="70%" style="stop-color:#f59e0b;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
     </radialGradient>
-    
-    <!-- Gradiente da aura vermelha Kaio-Ken -->
-    <radialGradient id="redAura" cx="50%" cy="50%">
-      <stop offset="0%" style="stop-color:#ff0000;stop-opacity:0.9" />
-      <stop offset="40%" style="stop-color:#dc2626;stop-opacity:0.6" />
-      <stop offset="100%" style="stop-color:#991b1b;stop-opacity:0" />
-    </radialGradient>
-    
-    <!-- Gradiente do escudo -->
-    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#1e40af;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#1e3a8a;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
-    </linearGradient>
-    
-    <!-- Gradiente das estrelas -->
-    <radialGradient id="starGrad" cx="50%" cy="50%">
-      <stop offset="0%" style="stop-color:#dc2626;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#7f1d1d;stop-opacity:1" />
-    </radialGradient>
-
-    <!-- Brilho -->
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
   </defs>
 
   <!-- Aura Kaio-Ken pulsante em camadas -->
@@ -97,33 +68,7 @@ an project who connects you enterprise project with security
             stroke="#450a0a" 
             stroke-width="0.5"/>
     </g>
-    
-    <!-- Estrela superior direita -->
-    <g transform="translate(115, 85)">
-      <path d="M 0,-7 L 1.8,-1.8 L 7,-1.8 L 2.5,1.8 L 4.3,7 L 0,3.5 L -4.3,7 L -2.5,1.8 L -7,-1.8 L -1.8,-1.8 Z" 
-            fill="url(#starGrad)" 
-            stroke="#450a0a" 
-            stroke-width="0.5"/>
-    </g>
-    
-    <!-- Estrela inferior esquerda -->
-    <g transform="translate(85, 115)">
-      <path d="M 0,-7 L 1.8,-1.8 L 7,-1.8 L 2.5,1.8 L 4.3,7 L 0,3.5 L -4.3,7 L -2.5,1.8 L -7,-1.8 L -1.8,-1.8 Z" 
-            fill="url(#starGrad)" 
-            stroke="#450a0a" 
-            stroke-width="0.5"/>
-    </g>
-    
-    <!-- Estrela inferior direita -->
-    <g transform="translate(115, 115)">
-      <path d="M 0,-7 L 1.8,-1.8 L 7,-1.8 L 2.5,1.8 L 4.3,7 L 0,3.5 L -4.3,7 L -2.5,1.8 L -7,-1.8 L -1.8,-1.8 Z" 
-            fill="url(#starGrad)" 
-            stroke="#450a0a" 
-            stroke-width="0.5"/>
-    </g>
   </g>
-
-  <!-- Partículas de energia voando ao redor -->
   <g opacity="0.8">
     <circle cx="30" cy="60" r="2.5" fill="#ff0000">
       <animate attributeName="cy" values="60;40;60" dur="2s" repeatCount="indefinite"/>
@@ -151,7 +96,6 @@ an project who connects you enterprise project with security
     </circle>
   </g>
 
-  <!-- Raios de energia emanando (efeito power-up) -->
   <g opacity="0.5">
     <line x1="100" y1="100" x2="100" y2="15" stroke="#ff0000" stroke-width="2">
       <animate attributeName="opacity" values="0.5;0.1;0.5" dur="1s" repeatCount="indefinite"/>
