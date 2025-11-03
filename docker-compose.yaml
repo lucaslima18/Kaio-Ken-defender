@@ -1,0 +1,46 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: kaio-ken-api
+    ports:
+      - "5000:5000"
+    command: ["sh", "scripts/start-development.sh"]
+    volumes:
+      - ./src:/app/src/
+    environment:
+      - RABBITMQ_HOST=rabbitmq
+      - RABBITMQ_PORT=5672
+      - RABBITMQ_QUEUE=nuclei_scans
+      - RABBITMQ_USER=guest
+      - RABBITMQ_PASSWORD=guest
+      - DATABASE_URL=sqlite:///data/scans.db
+      - FLASK_ENV=development
+      - DEBUG=True
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    networks:
+      - kaio-ken-network
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: kaio-ken-rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    healthcheck:
+      test: rabbitmq-diagnostics -q ping
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - kaio-ken-network
+
+networks:
+  kaio-ken-network:
+    driver: bridge
