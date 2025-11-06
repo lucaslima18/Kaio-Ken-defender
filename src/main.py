@@ -8,7 +8,7 @@ logger = LogHandler(logger_name=__name__)
 app = Flask(__name__)
 
 initialize_icon()
-
+print("teste")
 logger.info("TESTE DE INFO")
 logger.error("TESTE DE ERROR")
 logger.warn("Teste DE WARNING")
